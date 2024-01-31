@@ -1,0 +1,25 @@
+Binding:
+1. String Interpolation: {{}}
+	-- Always the data will be converted to string format
+	-- One way data binding
+	-- Flow of data from model(.ts) to view(html)
+	-- Flow of data from class data to the html elements
+2. Property Binding or Attribute binding
+	-- One way data binding
+	-- Flow of data from model(.ts) to view(html)
+	-- Flow of data from class data to the html element's attribute or property
+	-- []
+	-- Enclose the attribute or property in square binding
+
+3. Event Binding:
+--Flow of control/data from view(html) to component(.ts)
+--One way data binding
+-- ()
+-- Enclose the event which has to be handled by the component in paranthesis
+-- Enclose the angular event
+-- Each and every event will have its corresponding html event
+
+
+Parent To Child Communication:
+Child to Parent Communication
+Sibling- sibling communication
