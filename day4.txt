@@ -1,0 +1,58 @@
+constructor:
+	-- Called only once when the instance of class is created
+	-- First lifecycle method is executed implicitly
+
+
+
+Parent to child communication:
+1. @Input directive 
+
+--- Similar to property binding
+--- []
+--- Enclosed the property in square brackets
+--- Value to be assigned from the model is on right side
+--- data from the parent is added to @Input variable only after the constructor call
+
+
+@Input
+	-- Usage
+	-- Alias name for inputs
+	-- Various data types from the parent
+	-- Required/ mandatory inputs
+	-- Inputs with getters and setters
+	-- Transform metadata
+		-- pure function
+		-- no heavy calculations
+		-- No conditional set
+		-- Alternate for getters and setters
+	-- booleanAttribute and NumberAttribute
+		-- Should be used only with transform
+		-- Transform the data into the respective data types
+
+
+function add(a,b)
+{
+	// for same set of inputs, the same output is returned
+	// pure function
+	return a+b;
+}
+function addWithRandom(a,b)
+{
+	// impure function
+	// same set of input, the output may be different
+	return a+b+Math.random();
+}
+
+
+add(10,20);//30
+add(100,20);//120
+add(10,20);//30
+addWithRandom(10,20);//>30 and <31; random value
+addWithRandom(100,20);//>120 and <121; random value
+addWithRandom(10,20);//>30 and <31; random value
+
+
+Child To Parent Communication:
+	-- Sending data/control from child to parent
+	
+
