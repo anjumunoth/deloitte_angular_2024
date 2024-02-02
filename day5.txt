@@ -1,0 +1,64 @@
+Child to Parent Communication
+	-- Sending data/control from child to parent
+	-- @Output decorator
+	-- Events and Event listeners
+	-- Event; event handler; trigger the event
+	-- Type of data which is to be sent to the parent
+	-- ()
+
+In the child component
+1. Add an @Output decorator to be of type EventEmitter data type and also added the type of data which will be sent to the data
+2. Initialise the @output property
+3. In the required function, emitted the event by calling the emit method and passing the data as a parameter
+
+In the parent component:
+1. As part of the child tag, do the event binding and add the eventhandler 
+2. In the parent component.ts add the definition of the event handler as part of component class
+
+
+Lifecycle method:
+-- Method will be called implicitly
+-- Cannot be called explicitly
+-- Called based on its position in lifecycle
+-- Called once / multiple based on lifecycle method
+-- Mounting phase, unmounting phase, updating phase
+-- Mounting phase, unmounting phase -- called only once 
+-- Updating phase -- can be called multiple times 
+-- Implement an interface ; overriding the methods in the interface
+-- 
+Mounting of component:
+1. constructor
+2. ngOnChanges
+
+Unmounting phase of component:
+1. ngOnDestroy
+
+ngOnchanges:
+	--Interface: OnChanges
+	--Method to be overridden
+	ngOnChanges(simpleChanges:SimpleChanges):void
+	{
+	// simpleChanges has 3 values : firstChange:boolean, previousValue and currentValue
+	// functionality to be performed when the bound property changes
+	// functionality to be performed whenever the input elements changes
+	}
+	-- can be called multiple times
+	-- First time will be called after the constructor during the mounting of the component
+	-- Will be surely called atleast once during the mounting phase
+
+ngOnInit 
+	-- Will be called only once during the entire lifecycle of component
+	-- Used for initialisations
+	-- Transforming/changing the data coming from the parent
+	-- Work with a timer
+	-- Subscribe to 3rd party api's
+
+
+
+Parent, ChildP
+Parent --> Child :Property binding : usrArr:
+In child display-- users who have a salary > 10000
+Transform:
+	-- Pure function
+constructor : usrArr -- not accessible
+ngOnInit : filtering of usrArr: Yes
