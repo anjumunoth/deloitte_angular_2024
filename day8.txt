@@ -1,0 +1,14 @@
+Directives:
+	-- Added to an element
+		-- Built in html tag
+		-- Component (custom tag)
+	-- Transform the element on which it is added
+
+<app-add-to-cart *ngIf="showAddToCartComponent"></app-add-to-cart>
+
+1. Structural directives
+	-- *ngIf, *ngFor, *ngTemplateOutlet, *ngSwitch
+2. Attribute Directives
+	-- ngClass, ngStyle, ngModel
+	-- 
+3. Components
