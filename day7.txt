@@ -1,0 +1,18 @@
+Custom Pipe
+1. Generate the pipe
+	ng g pipe defaultImage
+2. Use the pipe
+	Decide:
+	1. Parameters
+	2. Mandatory and optional parameters
+3. Override the transform method
+	transform() -- called implicitly whenever the pipe is used
+	transform(value,...argsArr)
+	{
+		//value : value on which the pipe has been applied
+		//argsArr : array of the various parameters passed to the pipe
+		// Should return a string value 
+		// Modifications on the value parameter and return the modified value
+	}
+4. On the generated pipe class, we have to write the transform method
+	and have to implement PipeTransform interface
