@@ -1,0 +1,48 @@
+Directives
+1. Structural directives
+2. Attribute directives
+3. Component -- special directive with a view associated with it
+
+Custom directives -- why, when and what
+when 
+	-- change the look of UI (structural UI)
+	-- change the style or css of UI
+Can a single element have multiple directives -- YES 
+Can a single element have multiple structural directives -- NO
+
+Add a directive to an element
+Modify the element on which directive is added
+
+Add same directive to multiple elements(html and components)
+
+
+custom structural directive
+-- Change/modify/update/add to the structure of element
+custom attribute directive
+-- Change the styling, add event listeners, change the attribute values of elements
+
+<app-child-directive-examples appPopup [appCustomBorder]="myCustomBorder"  [popUpText]="componentText"  ></app-child-directive-examples>
+
+1. Mount a component -- child-directive-examples
+2. Constructor of child component will be called
+3. Notices 3 attributes
+4. Check @Input of child component ; Match with three attributes
+	-- No match found
+5. Check for custom directives declared in app.module 
+	Check if the attribute name and directive selector matches
+		-- Yes 2
+		-- appPopup and appCustomBorder
+		-- Constructors of these directives are executed
+		-- Values of @Input will be initialised
+		-- appPopUp's Input -- popUpText -- initialise the input variables
+Execute the custom directives
+6. There may be some attributes which dont match the child's input, directives's input -- Throw error
+
+
+<app-child appPopUp appPopUp2 popUpText="Hello !!!>
+</app-child>
+
+1. Can both the directives work with popUpText -- YES
+2. Can the child also access popUpText -- YES
+Provided for the both the above the directive/child componenet has added the @Input
+
