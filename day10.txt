@@ -1,0 +1,128 @@
+App
+--> Header,ProductManagement,Home,Footer
+	ProductManagement--> EditProductPrice
+	Home -->ProductList, Cart
+		ProductList-->AddToCart
+
+cartObj in AddToCart -- refer to in Cart Component
+-- @Output(child to parent, @Input(parent to child)
+-- services
+
+edited price of product -- EditProductPrice
+Is edited product price visible in ProductList -- Yes
+
+
+Services: 
+	-- Class with @Injectable decorator
+	-- Inject this service at component level, module level, application level
+	-- Singleton Class
+		-- Only one instance of class is possible
+	-- Inject the service -- Angular injector will check if there is an existing instance of service
+		-- If already present, provide the existing instance
+		-- If not present, create an instance
+		-- Injected the service at module level, all the elements(components,directive or pipes belonging to that module ) will work(share) with the same instance of service
+	-- Dependency injection 
+	-- Use it to work with shared data
+		-- Data available in multiple components
+	-- Use it for giving a API request and handle the response
+	-- Validation of data/users
+	-- Business logic
+	-- Component -- Display the view along with the model data and keep the model and view in sync 
+
+Services Example: 
+	 Use it to work with shared data
+		-- Data available in multiple components(parent-child,siblings, unconnected components )
+	-- Use it for giving a API request and handle the response
+	-- Validation of data/users
+	Authentication and authorisation
+	Encryption,decryption
+	Compression/Decompression of data
+	Streams of data as part of response
+	JWT - manage, add it to header part of request
+	handling the request, response cycle 
+	Handling the async tasks
+	Business logic:
+		File upload -- format
+		email sending -- valid email id, subject,cc , body
+
+
+var emp={empId:101,empName:"sara"};
+var emp2=emp;// creating a reference
+emp2.empName="tara";
+console.log(emp);//{empId:101,empName:"tara"};
+emp.empName="sara";
+var emp3={...emp};// copy of emp
+emp3.empname="jack";
+console.log(emp);//{empId:101,empName:"sara"};
+
+		
+[...data] vs {...data}
+
+Correct usage:
+colorsArr=["red","green","blue"];
+var copyOfArr=[...colorsArr];
+
+empObj={empId:101,empName="sara"};
+var copyOfObj={...empObj};
+
+var data=["red","green","blue"];
+var copyOfDataInArr=[...data];
+var copyOfDataInObj={...data};
+console.log(copyOfDataInObj);//{"0":["red","green","blue"]}
+
+var data={empId:101,empName="sara"};
+var copyOfDataInArr=[...data];
+var copyOfDataInObj={...data};
+console.log(copyOfDataInArr);//syntax error
+console.log(copyOfDataInObj);// copy of object
+
+Forms:
+-- Template form and Reactive forms
+-- Consits of many controls
+
+Template Form :
+	-- Form Controls as part of template
+	-- Validations are also part of template
+
+Register
+1. EmailId or Username, FirstName LastName, Password, Confirm Password, Mobile Number, Country
+2. Buttons : SignUp, Cancel
+3. Validations:
+	Client
+		-- Required(EmailId or Username, FirstName LastName, Password, Confirm Password)
+		-- EmailId should contain domainName -- deloitte.com
+		-- Password and Confirm Password should be same
+		-- Mobile number -- 10 digits
+		-- Strong password ( min 1 UP, LC, special char, 1 digit)
+		-- Password should not contain name
+		-- First and Last Name should have only alphabets
+
+	Server 
+		-- EmailId should not be present in register table
+		-- EmailId should be present in employee table
+		
+4. Error messages:
+	-- Displayed when 
+		-- on click of submit button
+			-- client side validations
+	-- How
+		Next to control
+	-- Style the control based on presence of error
+5. Once the client validation is successful 
+	-- check for server side validations 
+		-- require the values entered in form
+			-- call the service with the entered values(html ---> ts)
+	-- call the respective api
+	-- response
+		-- success -- Route the user to login page
+		-- failure -- Display the error messages of server validations
+
+
+Template forms:
+dirty(field has been modified) , pristine(field has not been modified)
+valid(value is correct), invalid(value is incorrect)
+touched(entered text box and lost focus) , untouched(never worked with the text box)
+
+
+
+
