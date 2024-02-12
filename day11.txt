@@ -1,0 +1,46 @@
+Custom validator based on 2 fields of template form:
+1. Create a directive
+2. Directive implements Validators
+3. Override the validate method
+4. In validate method -- call the validator function
+5. Add the directive in html -- at the form level
+6. As part of validate function -- form group is injected
+7. In the validator function return an inner function which checks if the 2 controls have the same value
+	-- yes: return null
+	-- no : return Validation error object
+8. As part of matching control, displayed the error message
+
+Template Form:
+	1. Create the form
+	2. Create the various form controls
+	3. Used in build validators
+	4. Custom validation -- based on field(s)
+	5. Display the error message with the form group or form control 	
+	6. Submit and reset button
+
+Advantages:
+-- Easy to create simple forms
+-- More logic in html and less code in ts; no structure required in ts
+-- Validations are done using directives(validation functions are called as part of directives)
+-- 
+Disadvantages:
+-- Implicitly creating the form control and form group
+-- Can we work with the form control and form group explicitly -- NO
+-- Scalability : Complex
+-- Maintability: Complex
+-- Modularity -- come down, no seperation of concerns
+-- For validations :Using Directives: clarity that the directive is a validator directive
+
+
+Reactive forms:
+when?
+	-- complex form
+	-- create the form controls and form groups explicity
+	-- scalable
+Working:
+1. Create the controls in .ts
+2. Create the form group in .ts
+3. In html page, linking between the various html elements and form controls
+4. Validations are also added in .ts page
+
+
