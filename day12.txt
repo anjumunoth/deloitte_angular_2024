@@ -1,0 +1,68 @@
+Reactive forms:
+	-- Controls and form group are created as part of class
+	-- To the various text box controls -- added the form controls
+	-- Added the form group to group
+	-- Validations are added to form controls created as part of class
+	-- can set or get the value of form controls from the class
+	-- No 2 way data binding (ngModel) required
+Adv:
+	-- Majority of code in ts
+	-- Clarity of what all the validations are done on a particular form control
+	-- Form controls and form group created explicitly
+	-- Modularity; clear seperation of concerns 
+	-- Scalability (add controls on the go)
+	-- Complex forms
+	
+Disadv:
+	-- Add a custom directive (structural or attribute) -- complex 
+
+Routing
+	-- Navigation
+		-- From client side
+		-- From server side
+
+Angular Routing:
+	-- Client side routing
+	-- SPA
+	-- faster
+	-- lesser number of request/response lifecycle
+	-- restrict some routes(authorised to route)
+	-- navigate out of a page -- user confirmation; unsaved changes -- cancel the navigation
+	-- prefetch the data before the routing 
+	-- pass some data as part of navigation (params, query strings)
+
+Create the project
+ng new projectName
+2 questions:
+	-- Routing -- added or not
+	-- type of styling
+
+Routes array: array of Route objects
+	Type of Route:
+Route :interface:
+	-- title
+	-- path
+	-- component
+	-- pathmatch
+	-- children
+	-- loadChildren -- lazy load the children
+	-- loadComponent -- lazy load the component
+	-- data
+	--redirectTo
+	-- Guards
+		-- canActivate
+		--canDeactivate
+		-- canActivateChild
+		-- canLoad
+		-- canMatch
+		-- resolve
+	-- outlet
+
+
+If productId >0 -- allow navigation to product-details
+if productId < 0 -- not allow navigation to product-details
+
+canActivate guard
+	check for some functionality
+	return true -- allow navigation
+	return false -- navigation will be cancelled
