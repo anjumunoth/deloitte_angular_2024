@@ -1,0 +1,121 @@
+1. Can the same guard be added to multiple components ? Yes
+2. Can a component have multiple guards ? Yes
+3. Can a component have multiple guards of the same type ? Yes
+
+Payment Component:
+Display various Mode of payment :UPI, Net Banking, wallets, Credit card/debit card
+Based on mode of payment :
+UPI -- navigate to UPI page
+Net banking -- navigate to bank's page
+wallet: display the various wallets which can be lined
+cc/dc: credit card number, cvv, date of expiry
+
+
+rxjs: Reactive extensions for javascript
+javascript -- asynchronous in nature
+	functions
+	callbacks, promises
+	streams of data
+
+stream of data
+
+Stream of data, Observable, subscription
+
+function myFunc(num1)
+{
+	
+	console.log("hi");
+	setTimeout(
+	()=>{
+		console.log("Inside func");
+
+		return "inside func"
+	},1000);
+	console.log("bye");
+}
+myFunc();// hi, bye, inside func
+
+
+pull system
+push system:
+
+Producer
+Consumer
+
+function -- define; call the function (function will be executed); // pull system
+promise -- start a async task ; return a value/error; then/catch;// push system
+Observable -- push system; can return multiple values
+
+promise -- max return a single value
+Observable -- return multiple values
+
+
+function : consumer will call the function; consumer can ask the returned value;
+Promise: consumer will have the promise; Producer will push the output
+
+function myFunc(num1)
+{
+	
+	console.log("hi");
+	setTimeout(
+	()=>{
+	if(num1%2 ==0)
+		return "even";
+	else
+		return "odd"
+	},0);
+	console.log("bye");
+}
+var result=myFunc(100);
+console.log(result);//ud
+
+function myFunc1(num1)
+{
+	var myPromise=new Promise((resolve,reject)=>{
+	setTimeout(
+	()=>{
+	if(num1%2 ==0)
+		resolve("even");
+	else
+		reject("odd");
+	},0);
+
+});
+	return myPromise;	
+}
+
+myFunc1(100)
+.then((data)=>{console.log(data)})
+.catch((err)=>{console.log(err)})
+
+//
+
+Promise -- based on async task
+Observable -- based on a task which returns a stream of data
+
+// REST API:
+// get request -- asking for some records
+// get request --> server --> handle the request --> get the required data --> form it a s response --> give the response to the client
+async task 
+consumer -- client
+producer -- server
+async -- GET request
+GET -- return a promise
+
+response -- json single response -- promise
+
+you tube -- streams of data
+response -- streams of response -- Observable
+
+sync task -- no need for observers/promises ; function -- return the value
+async task -- we dont know when we will get the value -- work with the promise
+
+function myfunc3(num1)
+{
+	if(num1%2 ==0)
+		return even;
+	else
+		return odd;
+}
+var res=myFunc3();
+console.log(res);
