@@ -1,0 +1,13 @@
+Unit testing:
+	-- components, serices, pipe, directive,guards,class
+Karma -- testing framework
+Jasmine -- library used for testing java script code
+
+tdd 
+1. Test case
+2. Test case will fail
+3. Write the corresponding code so that the test is successful
+
+
+Convert a promise to Observable
+Convert an observable to promise
